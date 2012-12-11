@@ -2,44 +2,36 @@
 # Authority: dries
 # Upstream: Barbie <barbie$cpan,org>
 
-%define perl_vendorlib %(eval "`%{__perl} -V:installvendorlib`"; echo $installvendorlib)
-%define perl_vendorarch %(eval "`%{__perl} -V:installvendorarch`"; echo $installvendorarch)
+%define upstream_name Data-Phrasebook
 
-%define real_name Data-Phrasebook
-
-Summary: Base class for Phrasebook Models
-Name: perl-Data-Phrasebook
-Version: 0.29
-Release: %mkrel 1
-License: Artistic/GPL
-Group: Development/Perl
-URL: http://search.cpan.org/dist/Data-Phrasebook/
-Source: http://www.cpan.org/modules/by-module/Data/Data-Phrasebook-%{version}.tar.gz
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArch: noarch
-BuildRequires: perl
-BuildRequires: perl(ExtUtils::MakeMaker)
-BuildRequires: perl(Test::More) >= 0.47
+Summary:	Base class for Phrasebook Models
+Name:		perl-%{upstream_name}
+Version:	0.29
+Release:	2
+License:	Artistic/GPL
+Group:		Development/Perl
+URL:		http://search.cpan.org/dist/Data-Phrasebook/
+Source:		http://www.cpan.org/modules/by-module/Data/%{upstream_name}-%{version}.tar.gz
+BuildRequires:	perl-devel
+BuildRequires:	perl(ExtUtils::MakeMaker)
+BuildRequires:	perl(Test::More) >= 0.47
+BuildArch:	noarch
 
 %description
 Base class for Phrasebook Models.
 
 %prep
-%setup -q -n %{real_name}-%{version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS="vendor" PREFIX="%{buildroot}%{_prefix}"
-%{__make} %{?_smp_mflags}
+perl Makefile.PL INSTALLDIRS="vendor" PREFIX="%{buildroot}%{_prefix}"
+%make
 
 %install
-%{__rm} -rf %{buildroot}
-%{__make} pure_install
+make pure_install
 
 ### Clean up buildroot
 find %{buildroot} -name .packlist -exec %{__rm} {} \;
-
-%clean
-%{__rm} -rf %{buildroot}
 
 %files
 %defattr(-, root, root, 0755)
@@ -51,8 +43,8 @@ find %{buildroot} -name .packlist -exec %{__rm} {} \;
 %{perl_vendorlib}/Data/Phrasebook.pm
 
 %changelog
-* Thu Nov 08 2007 Dag Wieers <dag@wieers.com> - 0.29-1 - 7981/dag
-- Updated to release 0.29.
+* Tue Sep 27 2011 Leonardo Coelho <leonardoc@mandriva.com> 0.29-1mdv2012.0
++ Revision: 701500
+- first mandriva version
+- Created package structure for 'perl-Data-Phrasebook'.
 
-* Sun Nov 19 2006 Dries Verachtert <dries@ulyssis.org> - 0.26-1
-- Initial package.
