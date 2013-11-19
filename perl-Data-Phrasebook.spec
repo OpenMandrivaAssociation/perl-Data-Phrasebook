@@ -6,12 +6,12 @@
 
 Summary:	Base class for Phrasebook Models
 Name:		perl-%{upstream_name}
-Version:	0.29
-Release:	2
+Version:	%perl_convert_version 0.34
+Release:	1
 License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/Data-Phrasebook/
-Source:		http://www.cpan.org/modules/by-module/Data/%{upstream_name}-%{version}.tar.gz
+Source:		http://www.cpan.org/modules/by-module/Data/Data-Phrasebook-0.34.tar.gz
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(Test::More) >= 0.47
@@ -47,4 +47,5 @@ find %{buildroot} -name .packlist -exec %{__rm} {} \;
 + Revision: 701500
 - first mandriva version
 - Created package structure for 'perl-Data-Phrasebook'.
+
 
