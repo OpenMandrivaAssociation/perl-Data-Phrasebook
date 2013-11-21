@@ -16,6 +16,7 @@ Source:		http://www.cpan.org/modules/by-module/Data/Data-Phrasebook-%{upstream_v
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(Test::More) >= 0.47
+BuildRequires:	perl(JSON::PP) >= 2.272
 BuildArch:	noarch
 
 %description
