@@ -8,7 +8,7 @@
 Summary:	Base class for Phrasebook Models
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	1
+Release:	2
 License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/Data-Phrasebook/
