@@ -11,7 +11,7 @@ Version:	%perl_convert_version %{upstream_version}
 Release:	3
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/Data-Phrasebook/
+URL:		https://search.cpan.org/dist/Data-Phrasebook/
 Source:		http://www.cpan.org/modules/by-module/Data/Data-Phrasebook-%{upstream_version}.tar.gz
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
