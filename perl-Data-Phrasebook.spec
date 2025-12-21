@@ -13,6 +13,7 @@ License:	Artistic/GPL
 Group:		Development/Perl
 URL:		https://search.cpan.org/dist/Data-Phrasebook/
 Source:		http://www.cpan.org/modules/by-module/Data/Data-Phrasebook-%{upstream_version}.tar.gz
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(Test::More) >= 0.47
