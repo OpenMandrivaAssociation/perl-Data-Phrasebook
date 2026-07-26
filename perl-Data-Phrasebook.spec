@@ -3,16 +3,14 @@
 # Upstream: Barbie <barbie$cpan,org>
 
 %define upstream_name Data-Phrasebook
-%define upstream_version 0.34
-
 Summary:	Base class for Phrasebook Models
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	0.34
+Release:	4
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		https://search.cpan.org/dist/Data-Phrasebook/
-Source:		http://www.cpan.org/modules/by-module/Data/Data-Phrasebook-%{upstream_version}.tar.gz
+URL:		https://metacpan.org/dist/Data-Phrasebook/
+Source:		http://www.cpan.org/modules/by-module/Data/Data-Phrasebook-%{version}.tar.gz
 BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
@@ -24,7 +22,7 @@ BuildArch:	noarch
 Base class for Phrasebook Models.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS="vendor" PREFIX="%{buildroot}%{_prefix}"
